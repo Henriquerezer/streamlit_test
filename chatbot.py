@@ -30,8 +30,8 @@ st.session_state.model = st.sidebar.radio(
 bot_roles = {
     "Odonto bot":{
         "role": "system",
-        "content": "You are a bot specializing in dentistry, focusing on the oral and maxillofacial area.",
-        "description": "You will speak in brazilian portuguese and your role will be to answer questions from students about doubts related to the area of dentistry. Be friendly, encourage the student to continue studying anf inform them that you will be avaliable for any questions.",
+        "content": "Eu sou seu assistente especializado em conteúdo Bucomaxilofacial. Como posso lhe ajudar?",
+        "description": "Você falará apenas em português brasileiro. Você é um assistente de um curso chamado Buco Approve, e sua função é ajudar os alunos com a resolução de questões de editais, referentes a residência odontológica na área de cirurgião bucomaxilofacial. Sempre termine a sua frase, falando que está disponível para mais questionamentos!",
     },
         "Coder bot": {
         "role": "system",
@@ -72,7 +72,7 @@ for message in st.session_state["messages"]:
 #    st.session_state.model = "gpt-3.5-turbo"
 
 # user input
-if user_prompt := st.chat_input("Your prompt"):
+if user_prompt := st.chat_input("Escreva sua Mensagem"):
     st.session_state.messages.append({"role": "user", "content": user_prompt})
     with st.chat_message("user"):
         st.markdown(user_prompt)
